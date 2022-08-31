@@ -1,5 +1,5 @@
 import anyAscii from './any-ascii.js';
-
+console.log("Checking translitation matches pattern.");
 function check(s, expected) {
 	const actual = anyAscii(s);
 	if (actual !== expected) {
@@ -77,3 +77,4 @@ check("ㄓㄨㄤ ㄅㄥ ㄒㄧㄠ", "zhuang beng xiao");
 check("ꚩꚫꛑꚩꚳ ꚳ꛰ꛀꚧꚩꛂ", "ipareim m'shuoiya");
 check("ᓀᐦᐃᔭᐍᐏᐣ", "nehiyawewin");
 check("ᠤᠯᠠᠭᠠᠨᠴᠠᠪ", "ulaganqab");
+console.log("Done!");

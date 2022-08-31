@@ -4,6 +4,24 @@ A copy of the js anyascii project as a small node lib that is expanded for testi
 
 Original: https://github.com/anyascii/anyascii
 
+## some notes...
+using ESM not commonjs.
+
+## test package
+```
+npm pack
+```
+Then to install this module in a different node app.
+```
+npm install /some/dir/js_lib_testing/any-ascii-0.3.2-dev.tgz
+```
+
+The below should work in the new app.
+```
+import anyAscii from 'any-ascii';
+console.log("Checking paths");
+```
+
 # AnyAscii
 
 Unicode to ASCII transliteration
