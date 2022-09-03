@@ -25,11 +25,14 @@
 	},
 	"scripts": {
 		"testNode": "node ./test.js",
-		"browserify": "browserify any-ascii.js -p esmify > dist/anyaciBundle.js",
-		"browserifyTest": "browserify any-ascii.js test.js -p esmify | testling"
+		"bundle4Web": "npx webpack --config webpack.config.js",
+		"browserifyTest": "browserify test.js -p esmify | testling"
 	},
 	"devDependencies": {
 		"browser-resolve": "^2.0.0",
-		"esmify": "^2.1.1"
+		"esmify": "^2.1.1",
+		"tape": "^5.6.0",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0"
 	}
 }

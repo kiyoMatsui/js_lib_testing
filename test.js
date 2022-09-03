@@ -1,12 +1,17 @@
 import anyAscii from './any-ascii.js';
+import test from 'tape';
+
 console.log("Checking translitation matches pattern.");
+
+
+test('mainTest', function(t) {
+
 function check(s, expected) {
 	const actual = anyAscii(s);
 	if (actual !== expected) {
 		throw new Error(actual + " !== " + expected);
 	}
 }
-
 check("", "");
 check("\u0000\u0001\t\n\u001f ~\u007f", "\u0000\u0001\t\n\u001f ~\u007f");
 check("sample", "sample");
@@ -77,4 +82,8 @@ check("ㄓㄨㄤ ㄅㄥ ㄒㄧㄠ", "zhuang beng xiao");
 check("ꚩꚫꛑꚩꚳ ꚳ꛰ꛀꚧꚩꛂ", "ipareim m'shuoiya");
 check("ᓀᐦᐃᔭᐍᐏᐣ", "nehiyawewin");
 check("ᠤᠯᠠᠭᠠᠨᠴᠠᠪ", "ulaganqab");
+t.equal(anyAscii('カタカナ'), 'katakana');
+
+});
 console.log("Done!");
+console.log("currently tap fails when running testNode but not on browserify and testling. built in checks pass both tests");
